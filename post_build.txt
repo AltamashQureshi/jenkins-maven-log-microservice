@@ -1,0 +1,23 @@
+Post:build step:------------------------
+
+Transfers
+Transfer Set
+Source files : log-generator/target/log-generator-1.0.0.jar
+Remove prefix : log-generator/target
+Remote directory : /
+Exec command: 
+
+cat << 'EOF' >/root/t1.sh
+#!/bin/bash
+pkill -f log-generator 
+
+APP_ENV=prod no hup /usr/bin/java -jar /root/log-generator-1.0.0.jar > /root/app.log 2>&1 &
+
+sleep 2
+
+EOF
+
+chmod +x /root/t1.sh
+
+sh /root/t1.sh
+
