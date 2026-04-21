@@ -7,7 +7,7 @@ Remove prefix : log-generator/target
 Remote directory : /
 Exec command: 
 
-cat << 'EOF' >/root/t1.sh
+cat << 'EOF' >/root/final.sh
 #!/bin/bash
 pkill -f log-generator 
 
@@ -17,7 +17,7 @@ sleep 2
 
 EOF
 
-chmod +x /root/t1.sh
+chmod +x /root/final.sh
 
-sh /root/t1.sh
+sh /root/final.sh
 
