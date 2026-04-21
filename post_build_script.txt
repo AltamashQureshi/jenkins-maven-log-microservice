@@ -11,7 +11,7 @@ cat << 'EOF' >/root/final.sh
 #!/bin/bash
 pkill -f log-generator 
 
-APP_ENV=prod no hup /usr/bin/java -jar /root/log-generator-1.0.0.jar > /root/app.log 2>&1 &
+APP_ENV=prod nohup /usr/bin/java -jar /root/log-generator-1.0.0.jar > /root/app.log 2>&1 &
 
 sleep 2
 
